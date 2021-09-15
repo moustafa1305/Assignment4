@@ -11,32 +11,63 @@
   <body>
     <main>
       <header>
+        <!-- Title -->
         <h1>Ultimate JavaScript Quiz</h1>
         <script src="./assets/js/script.js"></script>
+
+        <!-- Timer -->
+        <div class="timer">
+          <div class="timer_text">Time Remaining</div>
+          <div class="timer_sec">90</div>
+        </div>
+
+        <!-- High Score -->
+        <div class="high_score">High Scores</div>
       </header>
 
       <!-- Intro Box -->
 
-      <div class="intro_box"></div>
-      <p>
-        welcome to the Ultimate JavaScript Quiz!!! You will be asked a series of
-        multiple choice questions about JavaScript. You will be given a total of
-        90 seconds to complete the quiz, however you will be deducted 5 seconds
-        for each incorrect answer. GOOD LUCK!
-      </p>
+      <div class="intro_box">
+        <section>
+          <h2>How to Play</h2>
+          <p>
+            Welcome to the Ultimate JavaScript Quiz!!! You will be asked a
+            series of multiple choice questions about JavaScript. You will be
+            given a total of 90 seconds to complete the quiz, however you will
+            be deducted 5 seconds for each incorrect answer. Your final score is
+            the amount of seconds remaining when you complete the quiz. GOOD
+            LUCK!
+          </p>
+        </section>
+      </div>
 
       <!-- Start Button -->
 
       <div class="start_button"><button>Start Quiz</button></div>
 
-      <!-- Questions -->
+      <!-- Question Box-->
 
-      <p>What are variables used for in JavaScript Programs?</p>
+      <div class="question_box">
+        <div class="question">
+          <p>What are variables used for in JavaScript Programs?</p>
+        </div>
+      </div>
+
+      <!-- Answer Box -->
+
+      <div class="answer_box">
+        <div class="answers_list">
+          
+        </div>
+      </div>
+
+
+      <!-- <p>What are variables used for in JavaScript Programs?
       <p>Inside which HTML element do we put the JavaScript?</p>
       <p>Which types of image maps can be used with JavaScript?</p>
       <p>Which of the following best describes JavaScript?</p>
       <p>Using _______ statement is how you test for a specific condition.</p>
-      <p>What is mean by "this" keyword in javascript?</p>
+      <p>What is meant by "this" keyword in javascript?</p></p> -->
     </main>
   </body>
 </html>

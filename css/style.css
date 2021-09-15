@@ -13,13 +13,64 @@ main {
   border-radius: 10px;
 }
 
+/* Header Section */
+
 header {
   margin-top: 0px;
   border: 2px solid black;
   padding: 5px;
-  height: 200px;
-  background: beige;
+  height: 180px;
   background-image: url("../images/question mark background.jpg");
   border-radius: 10px;
   color: black;
+}
+
+h1 {
+  font-size: 50px;
+  color: green;
+  text-align: center;
+  padding: none;
+}
+
+/* Intro Box */
+
+.intro_box {
+  width: auto;
+  background-color: white;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: green;
+  padding: 20px 10px;
+  text-align: center;
+  border-bottom: 1px grey solid;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 20px;
+  padding: 0px 40px 20px 40px;
+  justify-content: flex-end;
+  text-align: justify;
+  border-bottom: 1px grey solid;
+}
+
+/* Start Button */
+
+.start_button {
+  justify-content: center;
+  display: flex;
+  padding: 10px 10px;
+}
+
+.start_button button {
+  font-size: 20px;
+  font-weight: bold;
+  color: green;
+  height: 50px;
+  width: 150px;
+  cursor: pointer;
 }
