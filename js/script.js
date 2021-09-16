@@ -6,6 +6,7 @@ var questions = [
       "Varying randomly;",
       "Causing high-school algebra flashbacks;",
       "None of the above;",
+      "All of the above;",
     ],
     correctAnswer: 0,
   },
@@ -41,3 +42,20 @@ var questions = [
     correctAnswer: 1,
   },
 ];
+
+function startQuize() {
+  var howToPlay = document.getElementById("how-to-play");
+  howToPlay.style.display = "none";
+
+  var question = document.getElementById("question");
+  question.innerHTML = questions[0]["question"];
+
+  document.getElementById("next_button").style.display = "block";
+  var answer;
+  var answerList = "";
+  for (var i = 0; i <= questions[0]["answers"].length; i++) {
+    answerList += "<li>" + questions[0]["answers"][i] + "</li>";
+  }
+  document.getElementById("answers_list").innerHTML =
+    "<ul>" + answerList + "</ul>";
+}

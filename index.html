@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./css/style.css" />
     <title>Ultimate JavaScript Quiz</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js"></script>
   </head>
 
   <body>
     <header>
       <!-- Title -->
       <h1>Ultimate JavaScript Quiz</h1>
-      <script src="./assets/js/script.js"></script>
 
       <!-- Timer -->
       <div class="timer">
-        <div class="timer_text">Time Remaining</div>
+        <div class="timer_text">Time Remaining:</div>
         <div class="timer_sec">90</div>
       </div>
 
@@ -26,34 +26,28 @@
 
     <main>
       <div class="intro"></div>
-
-      <div class="start_button"><button>Start Quiz</button></div>
-
-      <div class="next_button"><button>Next Question</button></div>
-
-      <div class="question"></div>
-
-      <ul class="answers_list"></ul>
+      <section class="how-to-play" id="how-to-play">
+        <h2>How to Play</h2>
+        <p>
+          Welcome to the Ultimate JavaScript Quiz!!! You will be asked a series
+          of multiple choice questions about JavaScript. You will be given a
+          total of 90 seconds to complete the quiz, however you will be deducted
+          5 seconds for each incorrect answer. Your final score is the amount of
+          seconds remaining when you complete the quiz. GOOD LUCK!
+        </p>
+        <div class="start_button" onClick="startQuize()">
+          <button>Start Quiz</button>
+        </div>
+      </section>
+      <section class="questions" id="questions">
+        <div class="question" id="question"></div>
+        <div class="answers_list" id="answers_list"></div>
+      </section>
+      <div class="next_button" id="next_button" style="display: none">
+        <button>Next Question</button>
+      </div>
 
       <div class="result"></div>
-
-      <!-- <section> 
-          <h2>How to Play</h2>
-          <p>
-            Welcome to the Ultimate JavaScript Quiz!!! You will be asked a
-            series of multiple choice questions about JavaScript. You will be
-            given a total of 90 seconds to complete the quiz, however you will
-            be deducted 5 seconds for each incorrect answer. Your final score is
-            the amount of seconds remaining when you complete the quiz. GOOD
-            LUCK!
-          </p>
-        </section>-->
-      <!--  
-      <p>Inside which HTML element do we put the JavaScript?</p>
-      <p>Which types of image maps can be used with JavaScript?</p>
-      <p>Which of the following best describes JavaScript?</p>
-      <p>Using _______ statement is how you test for a specific condition.</p>
-      <p>What is meant by "this" keyword in javascript?</p></p> -->
     </main>
   </body>
 </html>

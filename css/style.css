@@ -1,3 +1,43 @@
+/* Header Section */
+
+header {
+  margin-top: 0px;
+  border: 2px solid black;
+  padding: 10px;
+  width: 80%;
+  margin: auto;
+  max-width: 1000px;
+  height: 160px;
+  background-image: url("../images/question mark background.jpg");
+  border-radius: 10px;
+  color: black;
+}
+
+h1 {
+  font-size: 50px;
+  color: green;
+  text-align: center;
+  padding: none;
+}
+
+.high_score {
+  font-size: 20px;
+  font-weight: bold;
+  color: green;
+  justify-content: flex-end;
+  padding: 0 0 10px 10px;
+}
+
+.timer {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  position: absolute;
+  right: 10px;
+}
+
+/* Main Section */
+
 body {
   background-color: rgb(180, 224, 193);
   font-family: Helvetica;
@@ -12,28 +52,6 @@ main {
   padding: 10px;
   background-color: white;
   border-radius: 10px;
-}
-
-/* Header Section */
-
-header {
-  margin-top: 0px;
-  border: 2px solid black;
-  padding: 5px;
-  width: 80%;
-  margin: auto;
-  max-width: 1000px;
-  height: 180px;
-  background-image: url("../images/question mark background.jpg");
-  border-radius: 10px;
-  color: black;
-}
-
-h1 {
-  font-size: 50px;
-  color: green;
-  text-align: center;
-  padding: none;
 }
 
 /* Intro */
@@ -62,7 +80,7 @@ p {
   border-bottom: 1px grey solid;
 }
 
-/* Start & Next Question Button */
+/* Start Button */
 
 .start_button {
   justify-content: center;
