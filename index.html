@@ -9,26 +9,35 @@
   </head>
 
   <body>
+    <header>
+      <!-- Title -->
+      <h1>Ultimate JavaScript Quiz</h1>
+      <script src="./assets/js/script.js"></script>
+
+      <!-- Timer -->
+      <div class="timer">
+        <div class="timer_text">Time Remaining</div>
+        <div class="timer_sec">90</div>
+      </div>
+
+      <!-- High Score -->
+      <div class="high_score">High Scores</div>
+    </header>
+
     <main>
-      <header>
-        <!-- Title -->
-        <h1>Ultimate JavaScript Quiz</h1>
-        <script src="./assets/js/script.js"></script>
+      <div class="intro"></div>
 
-        <!-- Timer -->
-        <div class="timer">
-          <div class="timer_text">Time Remaining</div>
-          <div class="timer_sec">90</div>
-        </div>
+      <div class="start_button"><button>Start Quiz</button></div>
 
-        <!-- High Score -->
-        <div class="high_score">High Scores</div>
-      </header>
+      <div class="next_button"><button>Next Question</button></div>
 
-      <!-- Intro Box -->
+      <div class="question"></div>
 
-      <div class="intro_box">
-        <section>
+      <ul class="answers_list"></ul>
+
+      <div class="result"></div>
+
+      <!-- <section> 
           <h2>How to Play</h2>
           <p>
             Welcome to the Ultimate JavaScript Quiz!!! You will be asked a
@@ -38,31 +47,8 @@
             the amount of seconds remaining when you complete the quiz. GOOD
             LUCK!
           </p>
-        </section>
-      </div>
-
-      <!-- Start Button -->
-
-      <div class="start_button"><button>Start Quiz</button></div>
-
-      <!-- Question Box-->
-
-      <div class="question_box">
-        <div class="question">
-          <p>What are variables used for in JavaScript Programs?</p>
-        </div>
-      </div>
-
-      <!-- Answer Box -->
-
-      <div class="answer_box">
-        <div class="answers_list">
-          
-        </div>
-      </div>
-
-
-      <!-- <p>What are variables used for in JavaScript Programs?
+        </section>-->
+      <!--  
       <p>Inside which HTML element do we put the JavaScript?</p>
       <p>Which types of image maps can be used with JavaScript?</p>
       <p>Which of the following best describes JavaScript?</p>

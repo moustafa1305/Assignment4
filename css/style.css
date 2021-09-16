@@ -8,6 +8,7 @@ main {
   max-width: 1000px;
   border: 2px solid black;
   margin: auto;
+  margin-top: 20px;
   padding: 10px;
   background-color: white;
   border-radius: 10px;
@@ -19,6 +20,9 @@ header {
   margin-top: 0px;
   border: 2px solid black;
   padding: 5px;
+  width: 80%;
+  margin: auto;
+  max-width: 1000px;
   height: 180px;
   background-image: url("../images/question mark background.jpg");
   border-radius: 10px;
@@ -32,9 +36,9 @@ h1 {
   padding: none;
 }
 
-/* Intro Box */
+/* Intro */
 
-.intro_box {
+.intro {
   width: auto;
   background-color: white;
   border-radius: 10px;
@@ -58,7 +62,7 @@ p {
   border-bottom: 1px grey solid;
 }
 
-/* Start Button */
+/* Start & Next Question Button */
 
 .start_button {
   justify-content: center;

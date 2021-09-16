@@ -100,12 +100,6 @@ C. <script>
 D. <javascript>
 Ans: C
 
-Which types of image maps can be used with JavaScript?
-A. Server-side image maps
-B. Client-side image maps
-C. Server-side image maps and Client-side image maps
-D. None of the above
-Ans: B
 
 Which of the following best describes JavaScript?
 A. a low-level programming language.
@@ -114,7 +108,7 @@ C. a compiled scripting language.
 D. an object-oriented scripting language.
 Ans: D
 
-Using **\_\_\_** statement is how you test for a specific condition.
+Using **___** statement is how you test for a specific condition.
 A. Select
 B. If
 C. Switch
