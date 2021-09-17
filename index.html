@@ -15,10 +15,10 @@
       <h1>Ultimate JavaScript Quiz</h1>
 
       <!-- Timer -->
-      <div class="timer">
+      <!-- <div class="timer">
         <div class="timer_text">Time Remaining:</div>
         <div class="timer_sec">90</div>
-      </div>
+      </div> -->
 
       <!-- High Score -->
       <div class="high_score">High Scores</div>
@@ -35,10 +35,11 @@
           5 seconds for each incorrect answer. Your final score is the amount of
           seconds remaining when you complete the quiz. GOOD LUCK!
         </p>
-        <div class="start_button" onClick="startQuize()">
+        <div class="start_button" onClick="startQuiz()">
           <button>Start Quiz</button>
         </div>
       </section>
+      <div id="countdown"></div>
       <section class="questions" id="questions">
         <div class="question" id="question"></div>
         <div class="answers_list" id="answers_list"></div>
@@ -46,8 +47,7 @@
       <div class="next_button" id="next_button" style="display: none">
         <button>Next Question</button>
       </div>
-
-      <div class="result"></div>
+      <div class="result" id="result"></div>
     </main>
   </body>
 </html>

@@ -96,3 +96,16 @@ p {
   width: 150px;
   cursor: pointer;
 }
+.answers_list ol li {
+  padding: 5px 2px;
+  cursor: pointer;
+  margin: 5px 0;
+}
+.answers_list ol li.active {
+  border: 1px solid green;
+}
+#countdown {
+  color: red;
+  font-size: 24px;
+  float: right;
+}

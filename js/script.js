@@ -43,7 +43,7 @@ var questions = [
   },
 ];
 
-function startQuize() {
+function startQuiz() {
   var howToPlay = document.getElementById("how-to-play");
   howToPlay.style.display = "none";
 
@@ -51,11 +51,46 @@ function startQuize() {
   question.innerHTML = questions[0]["question"];
 
   document.getElementById("next_button").style.display = "block";
-  var answer;
+  var answer = questions[0]["answers"];
   var answerList = "";
-  for (var i = 0; i <= questions[0]["answers"].length; i++) {
-    answerList += "<li>" + questions[0]["answers"][i] + "</li>";
+  for (var i = 0; i < answer.length; i++) {
+    answerList +=
+      "<li id=" + i + " onClick='clickAnswer(this.id)'>" + answer[i] + "</li>";
   }
   document.getElementById("answers_list").innerHTML =
-    "<ul>" + answerList + "</ul>";
+    "<ol>" + answerList + "</ol>";
+
+  var givenTime = 90;
+  startTimer(givenTime);
+}
+
+function clickAnswer(clicked_id) {
+  //document.getElementsByClassName
+  //document.getElementsByClassName("active")[0].classList.remove("active");
+  document.getElementById(clicked_id).classList.add("active");
+  var cAnswer = questions[0]["correctAnswer"];
+  var gAnswer = clicked_id;
+  if (cAnswer == gAnswer) {
+    document.getElementById("result").innerHTML = "Correct";
+  } else {
+    document.getElementById("result").innerHTML = "Not Correct";
+    var currentTime = document.getElementById("countdown").textContent;
+    var timeLeft = currentTime - 30;
+    var wrongAnswer = true;
+    //startTimer(timeLeft, wrongAnswer);
+    //startTimer(timeLeft);
+    console.log("wrongAnswer");
+  }
+}
+
+function startTimer(givenTime, wrongAnswer = false) {
+  //var givenTime = 90; // seconds
+  var examTimer = setInterval(function () {
+    if (givenTime <= 0) {
+      document.getElementById("countdown").innerHTML = "Finished";
+    } else {
+      document.getElementById("countdown").innerHTML = givenTime;
+    }
+    givenTime -= 1;
+  }, 1000);
 }
