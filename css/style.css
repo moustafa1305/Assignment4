@@ -7,7 +7,7 @@ header {
   width: 80%;
   margin: auto;
   max-width: 1000px;
-  height: 160px;
+  height: auto;
   background-image: url("../images/question mark background.jpg");
   border-radius: 10px;
   color: black;
@@ -20,7 +20,7 @@ h1 {
   padding: none;
 }
 
-.high_score {
+.high_score, .score {
   font-size: 20px;
   font-weight: bold;
   color: green;
@@ -82,13 +82,22 @@ p {
 
 /* Start Button */
 
-.start_button {
+.start_button{
   justify-content: center;
   display: flex;
   padding: 10px 10px;
 }
+.next_button {
+  justify-content: left;
+  display: inline-block;
+  padding: 10px 10px;
+}
+.result{
+  display:  inline-block;
+  font-size: 20px;
+}
 
-.start_button button {
+.start_button button, .next_button button {
   font-size: 20px;
   font-weight: bold;
   color: green;

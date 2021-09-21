@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Ultimate JavaScript Quiz</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/script.js"></script>
   </head>
 
   <body>
@@ -21,7 +20,11 @@
       </div> -->
 
       <!-- High Score -->
-      <div class="high_score">High Scores</div>
+      <div class="quiz-score">
+        <div class="high_score">High Scores: <span id="high_score"></span></div>
+        <div class="score">Scores: <span id="score"></span></div>
+      </div>
+      
     </header>
 
     <main>
@@ -44,10 +47,14 @@
         <div class="question" id="question"></div>
         <div class="answers_list" id="answers_list"></div>
       </section>
-      <div class="next_button" id="next_button" style="display: none">
-        <button>Next Question</button>
+      <div class="next_button">
+        <button id="next_button" onclick="getQuestion()" style="display: none">Next</button>
       </div>
-      <div class="result" id="result"></div>
+      <div class="result"><span id="result"></span></div>
+      <div class="start_button">
+          <button onClick="startQuizAgain()" id="startQuizAgain" style="display: none">Start Quiz Again</button>
+      </div>      
     </main>
   </body>
+  <script src="./js/script.js"></script>
 </html>

@@ -12,7 +12,7 @@ var questions = [
   },
   {
     question: "2. Inside which HTML element do we put the JavaScript?",
-    answers: ["<js>", "<scripting>", "<script>", "<javascript>"],
+    answers: ["&lt;js&gt;", "&lt;scripting&gt;", "&lt;script&gt;", "&lt;javascript&gt;"],
     correctAnswer: 2,
   },
   {
@@ -43,54 +43,150 @@ var questions = [
   },
 ];
 
+var examTimer;
+var score = 0;
+var highScore = 0;
+var currentQuestionIndex = 0;
+var givenTime = 90;
+var wrongAnswerFine = 5;
+
+function resetVar(){
+  currentQuestionIndex = 0;
+  givenTime = 90;
+}
+
+
+function getQuestion() {
+  if(currentQuestionIndex >= questions.length){
+    var currentTime = document.getElementById("countdown").textContent;
+    score = currentTime;
+    if(highScore < score){
+      highScore = score;
+    }
+
+    document.getElementById("score").innerHTML = score;
+    document.getElementById("high_score").innerHTML = highScore;
+    document.getElementById("next_button").style.display = "none";
+    document.getElementById("result").innerHTML = "Quiz Over";
+    stopTimer();
+    document.getElementById("startQuizAgain").style.display = "block";
+  }
+  else{
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("next_button").disabled = true;
+    currentQuestion = questions[currentQuestionIndex];  
+    var question = document.getElementById("question");
+    question.innerHTML = questions[currentQuestionIndex]["question"]; 
+    
+    var answer = questions[currentQuestionIndex]["answers"];
+    var answersList = "";
+    for (var i = 0; i < answer.length; i++) {
+      answersList +=
+        "<li id=" + i + " onClick='clickAnswer(this.id)'>" + answer[i] + "</li>";
+    }
+    document.getElementById("answers_list").innerHTML =
+      "<ol>" + answersList + "</ol>";    
+    currentQuestionIndex++;
+    console.log(questions.length);
+    }    
+}
+
+// timer
+
+function setTimer(givenTime, wrongAnswer = false) {
+  
+  if(wrongAnswer){
+    clearInterval(examTimer);
+    setTimer(givenTime);
+  }
+  else
+  {
+    //var givenTime = 90; // seconds
+    examTimer = setInterval(function () {
+      if (givenTime <= 0) {
+        document.getElementById("countdown").innerHTML = "Finished";
+        document.getElementById("result").innerHTML = "Quiz Over";
+        document.getElementById("next_button").style.display = "none";
+        document.getElementById("score").innerHTML = 0;        
+        document.getElementById("startQuizAgain").style.display = "block";
+      } else {
+        document.getElementById("countdown").innerHTML = givenTime;
+      }
+      givenTime -= 1;
+    }, 1000);
+  } 
+  
+}
+
+//var questionDiv = document.getElementById("questionID");
+
 function startQuiz() {
+
   var howToPlay = document.getElementById("how-to-play");
   howToPlay.style.display = "none";
 
-  var question = document.getElementById("question");
-  question.innerHTML = questions[0]["question"];
-
+  getQuestion();  
+  setTimer(givenTime);
   document.getElementById("next_button").style.display = "block";
-  var answer = questions[0]["answers"];
-  var answerList = "";
-  for (var i = 0; i < answer.length; i++) {
-    answerList +=
-      "<li id=" + i + " onClick='clickAnswer(this.id)'>" + answer[i] + "</li>";
-  }
-  document.getElementById("answers_list").innerHTML =
-    "<ol>" + answerList + "</ol>";
-
-  var givenTime = 90;
-  startTimer(givenTime);
+}
+function startQuizAgain(){
+  document.getElementById("startQuizAgain").style.display = "none";
+  currentQuestionIndex = 0;
+  getQuestion();  
+  setTimer(givenTime);
+  document.getElementById("next_button").style.display = "block";
 }
 
 function clickAnswer(clicked_id) {
-  //document.getElementsByClassName
-  //document.getElementsByClassName("active")[0].classList.remove("active");
-  document.getElementById(clicked_id).classList.add("active");
-  var cAnswer = questions[0]["correctAnswer"];
-  var gAnswer = clicked_id;
-  if (cAnswer == gAnswer) {
+  
+  var correctAnswer = questions[currentQuestionIndex-1]["correctAnswer"];
+  //var givenAnswer = clicked_id;
+  if (correctAnswer == clicked_id) {
     document.getElementById("result").innerHTML = "Correct";
+    document.getElementById(clicked_id).style.border = "1px solid green";
+    document.getElementById("next_button").disabled = false;
   } else {
-    document.getElementById("result").innerHTML = "Not Correct";
-    var currentTime = document.getElementById("countdown").textContent;
-    var timeLeft = currentTime - 30;
-    var wrongAnswer = true;
-    //startTimer(timeLeft, wrongAnswer);
-    //startTimer(timeLeft);
-    console.log("wrongAnswer");
+    if(document.getElementById("result").textContent != "Correct"){
+      document.getElementById("result").innerHTML = "Not Correct";
+      document.getElementById(clicked_id).style.border = "1px solid red";
+      var currentTime = document.getElementById("countdown").textContent;
+      var timeLeft = currentTime - wrongAnswerFine;
+      setTimer(timeLeft,true);
+    }    
   }
+  
 }
 
-function startTimer(givenTime, wrongAnswer = false) {
-  //var givenTime = 90; // seconds
-  var examTimer = setInterval(function () {
-    if (givenTime <= 0) {
+function stopTimer(){
+    clearInterval(examTimer);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+  var givenTime = 90; // seconds
+  if (givenTime <= 0) {
       document.getElementById("countdown").innerHTML = "Finished";
-    } else {
-      document.getElementById("countdown").innerHTML = givenTime;
-    }
-    givenTime -= 1;
-  }, 1000);
+  } else {
+    document.getElementById("countdown").innerHTML = givenTime;
+  }
+  givenTime -= 1;
 }
+
+function myStopFunction() {
+  clearInterval(myVar);
+}*/
