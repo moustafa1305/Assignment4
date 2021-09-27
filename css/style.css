@@ -20,12 +20,15 @@ h1 {
   padding: none;
 }
 
-.high_score, .score {
+.high_score, .score, .back_to_home {
   font-size: 20px;
   font-weight: bold;
   color: green;
   justify-content: flex-end;
-  padding: 0 0 10px 10px;
+  padding: 10px;
+}
+.high_scores {
+  text-align: center;
 }
 
 .timer {
@@ -120,4 +123,21 @@ p {
 }
 .start_button.restart button{
   width: 200px;
+}
+div#high_score {
+    text-align: center;
+    font-size: 20px;
+}
+section.high_scores ol li {
+    padding-left: 20px;
+    padding-bottom: 2px;
+}
+section.high_scores ol {
+    display: inline-block;
+}
+section#questions {
+    padding: 20px;
+}
+section#high_scores {
+    padding-bottom: 50px;
 }
